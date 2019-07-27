@@ -23,7 +23,7 @@ public class RegisterController {
 	
 	
 	@PostMapping("/register")
-	public ResponseEntity<Object> registerUser(@RequestBody TraineeDTO traineeDTO) throws ApplicationException {
+	public ResponseEntity<Object> registerUser(@RequestBody TraineeDTO traineeDTO) throws ApplicationException  {
 		validateUser(traineeDTO);
 		return new ResponseEntity<>(registerService.registerUser(traineeDTO), HttpStatus.OK);
 	}
