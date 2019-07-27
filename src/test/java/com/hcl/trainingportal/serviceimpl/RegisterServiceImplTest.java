@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import com.hcl.trainingportal.dto.TraineeDTO;
+import com.hcl.trainingportal.exception.ApplicationException;
 import com.hcl.trainingportal.repository.TraineeRepository;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -29,7 +30,7 @@ public class RegisterServiceImplTest {
 	}
 	
 	@Test
-	public void testRegisterUserIfTraineeDetailsAreCorrect() {
+	public void testRegisterUserIfTraineeDetailsAreCorrect() throws ApplicationException  {
 		
 		assertNull(registerServiceImpl.registerUser(traineeDTO));
 	}
