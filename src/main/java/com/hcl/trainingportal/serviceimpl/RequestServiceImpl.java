@@ -20,7 +20,7 @@ public class RequestServiceImpl implements RequestService {
 	public void approve(RequestApprovalDTO requestDto) throws ApplicationException {
 		
 		Optional<Request> requestOpt = requestRepository.findById(requestDto.getRequestId());
-		if(requestOpt.isPresent()) {
+		if(!requestOpt.isPresent()) {
 			throw new ApplicationException("Request id is not found.");
 		}else {
 			Request request = requestOpt.get();
