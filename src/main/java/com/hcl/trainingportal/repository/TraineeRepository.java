@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.hcl.trainingportal.entity.Trainer;
 
 @Repository
-
 public interface TraineeRepository extends JpaRepository<Trainer, Long>  {
 
 }
