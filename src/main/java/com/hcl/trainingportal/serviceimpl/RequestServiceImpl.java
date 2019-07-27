@@ -79,7 +79,7 @@ public class RequestServiceImpl implements RequestService {
 		Request saveRequest = requestRepository.save(request);
 		
 		responseDTO.setHttpStatus(HttpStatus.OK);
-		responseDTO.setMessage("List of Courses");
+		responseDTO.setMessage("Request raised sucessfully");
 		responseDTO.setData(saveRequest);
 		
 		return responseDTO;
