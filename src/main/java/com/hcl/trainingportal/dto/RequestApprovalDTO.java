@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RequestDTO {
+public class RequestApprovalDTO {
 	
 	private Long trainerId;
 	private Long requestId;
