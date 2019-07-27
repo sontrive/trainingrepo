@@ -7,5 +7,7 @@ import com.hcl.trainingportal.exception.ApplicationException;
 public interface RegisterService {
 	
 	public ResponseDTO registerUser(TraineeDTO traineeDTO) throws ApplicationException;
+	
+
 
 }
