@@ -40,9 +40,6 @@ public class RegisterController {
 			throw new ApplicationException(ERROR_MSG + "Email");
 		}
 
-	}
-
-
-	
+	}	
 
 }
