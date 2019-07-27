@@ -29,8 +29,8 @@ public class RegisterServiceImpl implements RegisterService {
 		Trainee savedtrainee = traineeRepository.save(trainee);
  
 		responseDTO.setHttpStatus(HttpStatus.OK);
-	    responseDTO.setMessage("Train sucessfully registered");
-	    responseDTO.setData(savedtrainee);
+	    responseDTO.setMessage("Trainee sucessfully registered with the id"+"  "+ savedtrainee.getTraineeId());
+	    responseDTO.setData("");
 	     return responseDTO;
 		}
 		
