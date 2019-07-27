@@ -1,11 +1,15 @@
 package com.hcl.trainingportal.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,8 +20,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "trainer")
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@Table(name = "course")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "courseId")
 public class Course {
 	
 	@Id
@@ -28,12 +32,15 @@ public class Course {
 	@Column(name = "course_name")
 	private String courseName;
 	
-	@Column(name = "course_descriotion")
-	private String courseDescriotion;
+	@Column(name = "description")
+	private String description;
 	
 	@OneToOne
 	@JoinColumn(name = "trainer_id")
 	private Trainer trainer;
+	
+	@OneToMany(mappedBy = "courseDetails", cascade = CascadeType.ALL)
+	private List<Request> courseRequestList;
 	
 
 }

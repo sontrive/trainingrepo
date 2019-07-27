@@ -3,8 +3,9 @@ package com.hcl.trainingportal.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+import com.hcl.trainingportal.entity.Request;
 
-public interface RequestRepository extends JpaRepository<Repository, Long>  {
+@Repository
+public interface RequestRepository extends JpaRepository<Request, Long> {
 
 }
