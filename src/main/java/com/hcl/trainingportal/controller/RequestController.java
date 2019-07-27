@@ -41,18 +41,15 @@ private static final String ERROR_MSG = "Mandetory Element missing : ";
 	}
 	
 	private void validateRequest(RequestDTO requestDTO) throws ApplicationException{
-		if(StringUtils.isEmpty(requestDTO.getCourseName())) {
-			throw new ApplicationException(ERROR_MSG + "CustomerId");
-		}
-		if(null != requestDTO.getCourseId()) {
-			throw new ApplicationException(ERROR_MSG + "Course Id");
-		}
-		if(null != requestDTO.getTraineeId()) {
-			throw new ApplicationException(ERROR_MSG + "Trainee Id");
-		}
-		if(null != requestDTO.getSkills() && !requestDTO.getSkills().isEmpty()) {
-			throw new ApplicationException(ERROR_MSG + "Skills");
-		}
+		/*
+		 * if(StringUtils.isEmpty(requestDTO.getCourseName())) { throw new
+		 * ApplicationException(ERROR_MSG + "CourseName"); } if(null !=
+		 * requestDTO.getCourseId()) { throw new ApplicationException(ERROR_MSG +
+		 * "Course Id"); } if(null != requestDTO.getTraineeId()) { throw new
+		 * ApplicationException(ERROR_MSG + "Trainee Id"); } if(null !=
+		 * requestDTO.getSkills() && !requestDTO.getSkills().isEmpty()) { throw new
+		 * ApplicationException(ERROR_MSG + "Skills"); }
+		 */
 		
 		
 	}
