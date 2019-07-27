@@ -24,10 +24,17 @@ public class CourseServiceImpl implements CourseService {
 		
 		ResponseDTO responseDTO = new ResponseDTO();
 		List<Course> courseList = courseRepository.findAll();
-		List<CourseResponseDTO> courseResponseDTOList = courseList.stream().map(i -> new CourseResponseDTO(i.getCourseId(), i.getCourseName() , i.getDescription())).collect(Collectors.toList());
-		responseDTO.setHttpStatus(HttpStatus.OK);
-		responseDTO.setMessage("List of Courses");
-		responseDTO.setData(courseResponseDTOList);
+		if (null != courseList) {
+			List<CourseResponseDTO> courseResponseDTOList = courseList.stream()
+					.map(i -> new CourseResponseDTO(i.getCourseId(), i.getCourseName(), i.getDescription()))
+					.collect(Collectors.toList());
+			responseDTO.setHttpStatus(HttpStatus.OK);
+			responseDTO.setMessage("List of Courses");
+			responseDTO.setData(courseResponseDTOList);
+		} else {
+			responseDTO.setHttpStatus(HttpStatus.OK);
+			responseDTO.setMessage("No cources found.");
+		}
 		return responseDTO;
 	}
 
