@@ -16,7 +16,7 @@ public class CourseController {
 	@Autowired
 	CourseService courseService;
 	
-	@GetMapping("/")
+	@GetMapping("")
 	public ResponseEntity<Object> getAllCourses(){
 		return new ResponseEntity<>(courseService.getAllCourses(), HttpStatus.OK);
 	}

@@ -1,6 +1,8 @@
 package com.hcl.trainingportal.serviceimpl;
 
-import static org.junit.Assert.assertNull;
+
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import com.hcl.trainingportal.dto.TraineeDTO;
+import com.hcl.trainingportal.entity.Trainee;
 import com.hcl.trainingportal.exception.ApplicationException;
 import com.hcl.trainingportal.repository.TraineeRepository;
 
@@ -31,7 +34,12 @@ public class RegisterServiceImplTest {
 	
 	@Test
 	public void testRegisterUserIfTraineeDetailsAreCorrect() throws ApplicationException  {
-		
-		assertNull(registerServiceImpl.registerUser(traineeDTO));
+		Trainee inputTrainee = new Trainee();
+		Trainee outputTrainee = new Trainee();
+		outputTrainee.setTraineeId(1L);
+		when(traineeRepository.save(inputTrainee)).thenReturn(outputTrainee);
+		assertNotNull(registerServiceImpl.registerUser(traineeDTO));
 	}
+	
+	
 }
