@@ -24,7 +24,7 @@ public class CourseServiceImpl implements CourseService {
 		
 		ResponseDTO responseDTO = new ResponseDTO();
 		List<Course> courseList = courseRepository.findAll();
-		if (null != courseList) {
+		if (null != courseList && !courseList.isEmpty())  {
 			List<CourseResponseDTO> courseResponseDTOList = courseList.stream()
 					.map(i -> new CourseResponseDTO(i.getCourseId(), i.getCourseName(), i.getDescription()))
 					.collect(Collectors.toList());
