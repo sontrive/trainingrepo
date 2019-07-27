@@ -34,12 +34,7 @@ public class RegisterServiceImpl implements RegisterService {
 	     return responseDTO;
 		}
 		
-		responseDTO.setHttpStatus(HttpStatus.BAD_REQUEST);
-		responseDTO.setData("");
-		responseDTO.setMessage("Invalid input");
-		
-		return responseDTO;
-		
+		throw new ApplicationException("Invalid input");
 	
 	}
 
