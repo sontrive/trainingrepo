@@ -13,7 +13,7 @@ public class RequestApprovalDTO {
 	
 	private Long trainerId;
 	private Long requestId;
-	private String Status;
+	private String status;
 	private LocalDateTime courseStartDate;
 	
 }

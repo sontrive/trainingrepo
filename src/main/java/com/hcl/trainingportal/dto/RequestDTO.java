@@ -11,7 +11,7 @@ public class RequestDTO {
 	
 	private String courseName;
 	
-	private List<SkillDTO> Skills;
+	private List<SkillDTO> skills;
 	
 	private Long traineeId;
 
